@@ -79,6 +79,11 @@ RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/bina
 
 RUN ln -sf /usr/share/zoneinfo/Mexico/General /etc/localtime 
 
+RUN localedef -i es_MX -f UTF-8 es_MX.UTF-8
+
+ENV LANG es_MX.UTF-8
+ENV LC_ALL es_MX.UTF-8
+
 ENV MAVEN_HOME /usr/share/maven
 
 # Add configuration files, bashrc and other tweaks
